@@ -5,6 +5,9 @@ import {Link} from 'react-router-dom'
 import Hidden from '@material-ui/core/Hidden';
 
 import footerAdornment from '../../assets/Footer Adornment.svg'
+import facebook from '../../assets/facebook.svg';
+import twitter from '../../assets/twitter.svg';
+import instagram from '../../assets/instagram.svg';
 
 const useStyles = makeStyles(theme => ({
     footer:{ 
@@ -35,6 +38,22 @@ const useStyles = makeStyles(theme => ({
     },
     gridItem: {
         margin: "5rem"
+    },
+    icon: { 
+        height: "4rem",
+        width: "4rem",
+        [theme.breakpoints.down("xs")]: {
+            height: "2.5rem",
+            width: "2.5rem"
+        }
+    },
+    socialContainer: {
+        position: "absolute",
+        marginTop: '-6rem',
+        right: "1.5rem",
+        [theme.breakpoints.down("xs")]: {
+            right: "0.6rem",
+        }
     }
 }))
 
@@ -109,6 +128,17 @@ export default function Footer(){
             <img alt="black decoratiev slash" src={footerAdornment}
                 className={classes.adornment}    
             />
+            <Grid container justify="flex-end" spacing={2} className={classes.socialContainer}>
+                <Grid item component={"a"} href="https://www.facebook.com" rel="noopener noreferrer" target="_blank">
+                    <img alt="Facebook" src={facebook} className={classes.icon} />
+                </Grid>
+                <Grid item component={"a"}  href="https://www.twitter.com" rel="noopener noreferrer" target="_blank">
+                    <img alt="Twiter" src={twitter} className={classes.icon}  />
+                </Grid>
+                <Grid item component={"a"}  href="https://www.instagram.com" rel="noopener noreferrer" target="_blank">
+                    <img alt="Instagram" src={instagram} className={classes.icon} />
+                </Grid>
+            </Grid>
         </footer>
     ); 
 }
