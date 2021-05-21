@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import theme from './ui/Theme'
 import Header from '../components/ui/Header'
 import Footer from '../components/ui/Footer'
+import LandingPage from '../components/LandingPage'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route exact path="/" component={() => <div>Home</div>} />
+          <Route exact path="/" component={LandingPage} />
           <Route exact path="/services" component={() => <div>services</div>} />
           <Route exact path="/custom-software" component={() => <div>custom-software</div>} />
           <Route exact path="/mobile-apps" component={() => <div>mobile-apps</div>} />
