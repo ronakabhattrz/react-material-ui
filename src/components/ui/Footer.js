@@ -1,6 +1,8 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
+import {Link} from 'react-router-dom'
+import Hidden from '@material-ui/core/Hidden';
 
 import footerAdornment from '../../assets/Footer Adornment.svg'
 
@@ -28,7 +30,11 @@ const useStyles = makeStyles(theme => ({
         color: "white",
         fontFamily: "Arial",
         fontSize: '0.75rem',
-        fontWeight: "bold"
+        fontWeight: "bold",
+        textDecoration: "none"
+    },
+    gridItem: {
+        margin: "5rem"
     }
 }))
 
@@ -37,65 +43,69 @@ export default function Footer(){
 
     return (
         <footer className={classes.footer}>
-            <Grid container justify="center" className={classes.mainContainer}>
-                <Grid item>
-                    <Grid container direction="column">
-                        <Grid item className={classes.link}>
-                            Home
+            <Hidden mdDown>
+                <Grid container justify="center" className={classes.mainContainer}>
+                    <Grid item className={classes.gridItem}>
+                        <Grid container direction="column" spacing={2}>
+                            <Grid item component={Link} to="/" className={classes.link}>
+                                Home
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item className={classes.gridItem}>
+                        <Grid container direction="column" spacing={2}>
+                            <Grid item component={Link} to="/services" className={classes.link}>
+                                Services
+                            </Grid>
+                            <Grid item component={Link} to="/custom-software-development" className={classes.link}>
+                                Custom Software
+                            </Grid>
+                            <Grid item component={Link} to="/mobile-development" className={classes.link}>
+                                Mobile development
+                            </Grid>
+                            <Grid item component={Link} to="/website-development" className={classes.link}>
+                                website development
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item className={classes.gridItem}>
+                        <Grid container direction="column" spacing={2}>
+                            <Grid item component={Link} to="/revolution" className={classes.link}>
+                                Revolution
+                            </Grid>
+                            <Grid item component={Link} to="/revolution" className={classes.link}>
+                                Technology
+                            </Grid>
+                            <Grid item component={Link} to="/revolution" className={classes.link}>
+                                Process
+                            </Grid>
+                            <Grid item component={Link} to="/revolution" className={classes.link}>
+                                Vision
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item className={classes.gridItem}>
+                        <Grid container direction="column" spacing={2}>
+                            <Grid item component={Link} to="/about" className={classes.link}>
+                                About Us
+                            </Grid>
+                            <Grid item component={Link} to="/about" className={classes.link}>
+                                Team
+                            </Grid>
+                            <Grid item component={Link} to="/about" className={classes.link}>
+                                History
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item className={classes.gridItem}>
+                        <Grid container direction="column" spacing={2}>
+                            <Grid item component={Link} to="/contact" className={classes.link}>
+                                Contact Us
+                            </Grid>
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item>
-                    <Grid container direction="column">
-                        <Grid item className={classes.link}>
-                            Services
-                        </Grid>
-                        <Grid item className={classes.link}>
-                            CUstom Software
-                        </Grid>
-                        <Grid item className={classes.link}>
-                            Mobile development
-                        </Grid>
-                        <Grid item className={classes.link}>
-                            website development
-                        </Grid>
-                    </Grid>
-                </Grid>
-                <Grid item>
-                    <Grid container direction="column">
-                        <Grid item className={classes.link}>
-                            Revolution
-                        </Grid>
-                        <Grid item className={classes.link}>
-                            Technology
-                        </Grid>
-                        <Grid item className={classes.link}>
-                            Process
-                        </Grid>
-                    </Grid>
-                </Grid>
-                <Grid item>
-                    <Grid container direction="column">
-                        <Grid item className={classes.link}>
-                            About Us
-                        </Grid>
-                        <Grid item className={classes.link}>
-                            Team
-                        </Grid>
-                        <Grid item className={classes.link}>
-                            History
-                        </Grid>
-                    </Grid>
-                </Grid>
-                <Grid item>
-                    <Grid container direction="column">
-                        <Grid item className={classes.link}>
-                            Contact Us
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Grid>
-
+            </Hidden>
             <img alt="black decoratiev slash" src={footerAdornment}
                 className={classes.adornment}    
             />
